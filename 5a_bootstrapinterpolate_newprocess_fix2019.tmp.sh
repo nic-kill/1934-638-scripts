@@ -12,7 +12,7 @@ set gpcalnfbin = (1)
 #should it be required later just add a line identical to instances of 1419.5.2 with the names changed below it
 
 #flagging channels varies with time of year
-foreach dest ( 2019*.uv.split )
+foreach dest ( 2016-04*.uv.split 2016-05*.uv.split 2016-08*.uv.split 2016-11*.uv.split 2017-02*.uv.split 2019*.uv.split )
 	echo "STARTING ${dest}" |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 	cd /priv/myrtle1/gaskap/nickill/1934project/uvfiles/${dest}
 	pwd |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
@@ -64,7 +64,7 @@ foreach dest ( 2019*.uv.split )
 	mfcal vis=1934-638.1420.5.6_flaggedHI/ line=channel,5200,400,1,1 refant=3 interval=5 options=nopassol |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 	gpcal vis=1934-638.1420.5.6_flaggedHI/ line=channel,5200,400,1,1 refant=3 interval=$gpcalint options=xyvary nfbin=$gpcalnfbin |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 	gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.4/ |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
-	gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.6/ |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log #repeated because wildcards not supported in out parameter
+	if ( ${dest} =~ 2019*.uv.split ) gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.6/ |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log #repeated because wildcards not supported in out parameter, 2019 has differnet ID tag for 1420
 	echo "FINISHED ${dest}" |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 end
 
