@@ -55,6 +55,7 @@ foreach dest ( 2016-04*.uv.split 2016-05*.uv.split 2016-08*.uv.split 2016-11*.uv
 	mfcal vis=1934-638.1420.5.6_flaggedHI/ line=channel,5200,400,1,1 refant=3 interval=5 options=interpolate |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 	gpcal vis=1934-638.1419.5.2 refant=3 interval=$gpcalint options=xyvary nfbin=$gpcalnfbin |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 	gpcal vis=1934-638.1420.5.6_flaggedHI/ refant=3 interval=$gpcalint options=xyvary nfbin=$gpcalnfbin |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
+	
 	#now do the bootstrapping
 	cd /priv/myrtle1/gaskap/nickill/1934project/uvfiles/${dest}/bootstrap 
 	mfcal vis=1934-638.1419.5.2 line=channel,5200,400,1,1 refant=3 interval=5 |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
