@@ -64,8 +64,8 @@ foreach dest ( 2016-04*.uv.split 2016-05*.uv.split 2016-08*.uv.split 2016-11*.uv
 	delhd in=1934-638.1420.5.6_flaggedHI/gains |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 	mfcal vis=1934-638.1420.5.6_flaggedHI/ line=channel,5200,400,1,1 refant=3 interval=5 options=nopassol |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 	gpcal vis=1934-638.1420.5.6_flaggedHI/ line=channel,5200,400,1,1 refant=3 interval=$gpcalint options=xyvary nfbin=$gpcalnfbin |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
-	gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.4/ |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
-	if ( ${dest} =~ 2019*.uv.split ) gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.6/ |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log #repeated because wildcards not supported in out parameter, 2019 has differnet ID tag for 1420
+	if ( ${dest} =~ 2019*.uv.split ) gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.4/ |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log # 2019 has different ID tag for 1420
+	gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.6/ |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log #repeated because wildcards not supported in out parameter
 	echo "FINISHED ${dest}" |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 end
 
