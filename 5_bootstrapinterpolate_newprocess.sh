@@ -71,4 +71,3 @@ end
 
 echo "EVERYTHING IS DONE" |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 
-
