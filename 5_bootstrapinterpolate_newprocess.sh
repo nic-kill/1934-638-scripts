@@ -51,11 +51,10 @@ foreach dest ( 2016-04*.uv.split 2016-05*.uv.split 2016-08*.uv.split 2016-11*.uv
 	if ( ${dest} =~ 2019*.uv.split ) uvflag vis=1934-638.1419.5.2 line=channel,260,970,1,1 flagval=f |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 
 	#calibrate interpolated method
-	mfcal vis=1934-638.1419.5.2 line=channel,5200,400,1,1 refant=3 interval=5 options=interpolate |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 	mfcal vis=1934-638.1420.5.6_flaggedHI/ line=channel,5200,400,1,1 refant=3 interval=5 options=interpolate |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
-	gpcal vis=1934-638.1419.5.2 refant=3 interval=$gpcalint options=xyvary nfbin=$gpcalnfbin |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
 	gpcal vis=1934-638.1420.5.6_flaggedHI/ refant=3 interval=$gpcalint options=xyvary nfbin=$gpcalnfbin |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
-	
+	gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.6/ |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log #repeated because wildcards not supported in out parameter
+
 	#now do the bootstrapping
 	cd /priv/myrtle1/gaskap/nickill/1934project/uvfiles/${dest}/bootstrap 
 	mfcal vis=1934-638.1419.5.2 line=channel,5200,400,1,1 refant=3 interval=5 |& tee -a /priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log
