@@ -2,7 +2,7 @@
 
 cd /priv/myrtle1/gaskap/nickill/1934project/uvfiles
 
-set log = (${log})
+set log = (/priv/myrtle1/gaskap/nickill/1934project/uvfiles/miriadcal.log)
 
 date |& tee -a ${log}
 
