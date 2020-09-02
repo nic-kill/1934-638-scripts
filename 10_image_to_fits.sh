@@ -2,9 +2,13 @@
 
 #miriad task to crop in space and velocity
 
-cd /priv/myrtle1/gaskap/nickill/
-fits in='1420.5.6_image_cleaned.map' out='1420.5.6_cleaned.fits' op=xyout line=velocity
+cd /priv/myrtle1/gaskap/nickill/uvfiles/images
 
+foreach filename ( 1420_bootstrap_merge_restored 1420_interpolated_merge_restored )
+
+    fits in=${filename}.map out=${filename}.fits op=xyout line=velocity
+    
+end
 
 
 
