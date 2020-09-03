@@ -32,7 +32,15 @@ foreach dest ( 2016-04*.uv.split 2016-05*.uv.split 2016-08*.uv.split 2016-11*.uv
 	cp -r 1934-638.1420.5.* 1934-638.1420.5.6_flaggedHI |& tee -a ${log}
 
  	#flag the HI line on the new copy
-	if ( ${dest} =~ 2016-04*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,230,3000,1,1 flagval=f |& tee -a ${log}
+	if ( ${dest} =~ 2016-04*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,600,2800,1,1 flagval=f |& tee -a ${log}
+	if ( ${dest} =~ 2016-05*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,230,3000,1,1 flagval=f |& tee -a ${log}
+	if ( ${dest} =~ 2016-08*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,200,3370,1,1 flagval=f |& tee -a ${log}
+	if ( ${dest} =~ 2016-11*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,200,3390,1,1 flagval=f |& tee -a ${log}
+	if ( ${dest} =~ 2017-02*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,300,2990,1,1 flagval=f |& tee -a ${log}
+	if ( ${dest} =~ 2019*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,200,3080,1,1 flagval=f |& tee -a ${log}
+
+	#flag the 50km/s bump line on the new copy
+	if ( ${dest} =~ 2016-04*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,500,3300,1,1 flagval=f |& tee -a ${log}
 	if ( ${dest} =~ 2016-05*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,230,3000,1,1 flagval=f |& tee -a ${log}
 	if ( ${dest} =~ 2016-08*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,200,3370,1,1 flagval=f |& tee -a ${log}
 	if ( ${dest} =~ 2016-11*.uv.split ) uvflag vis=1934-638.1420.5.6_flaggedHI line=channel,200,3390,1,1 flagval=f |& tee -a ${log}
