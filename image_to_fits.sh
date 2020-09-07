@@ -4,7 +4,7 @@
 
 cd /priv/myrtle1/gaskap/nickill/1934project/uvfiles/images
 
-foreach filename ( 1420_bootstrap_merge_restored 1420_interpolated_merge_restored )
+foreach filename ( 1420_bootstrap_merge_fixedfreq_restored 1420_interpolated_merge_fixedfreq_restored )
 
     fits in=${filename}.map out=${filename}.fits op=xyout
 
