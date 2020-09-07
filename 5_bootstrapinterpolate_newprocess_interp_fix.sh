@@ -56,7 +56,7 @@ foreach dest ( 2016-04*.uv.split 2016-05*.uv.split 2016-08*.uv.split 2016-11*.uv
 	gpcal vis=1934-638.1420.5.6_flaggedHI/ refant=3 interval=$gpcalint options=xyvary nfbin=$gpcalnfbin |& tee -a ${log}
 	if ( ${dest} =~ 2019*.uv.split ) then
 			gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.4/ |& tee -a ${log} # 2019 has different ID tag for 1420
-		else 
+		else
     		gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.6/ |& tee -a ${log}
   		endif 
 	
