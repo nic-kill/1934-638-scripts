@@ -57,9 +57,9 @@ foreach dest ( 2016-04*.uv.split 2016-05*.uv.split 2016-08*.uv.split 2016-11*.uv
 	if ( ${dest} =~ 2019*.uv.split ) then
 			gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.4/ |& tee -a ${log} # 2019 has different ID tag for 1420
 		else
-    		gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.6/ |& tee -a ${log}
-  		endif 
-	
+			gpcopy vis=1934-638.1420.5.6_flaggedHI/ out=1934-638.1420.5.6/ |& tee -a ${log}
+		endif 
+
 	#now do the bootstrapping
 	cd /priv/myrtle1/gaskap/nickill/1934project/uvfiles/${dest}/bootstrap 
 	mfcal vis=1934-638.1419.5.2 line=channel,5200,400,1,1 refant=3 interval=5 |& tee -a ${log}
